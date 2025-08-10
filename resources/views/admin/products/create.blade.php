@@ -17,13 +17,25 @@
 
   <div class="mb-3">
     <label>Description</label>
-    <textarea name="description" class="form-control">{{ old('description') }}</textarea>
+    <textarea id="summernote" name="description" class="form-control">{{ old('description') }}</textarea>
   </div>
 
-  <div class="mb-3">
+  {{-- <div class="mb-3">
     <label>Images (multiple)</label>
     <input type="file" name="images[]" multiple class="form-control">
-  </div>
+  </div> --}}
+  <div class="form-group">
+                    <label for="multipleImageInput">Images (multiple)</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file"  name="images[]"  multiple class="custom-file-input" id="multipleImageInput">
+                        <label class="custom-file-label" for="multipleImageInput">Choose file</label>
+                      </div>
+                      {{-- <div class="input-group-append">
+                        <span class="input-group-text">Upload</span>
+                      </div> --}}
+                    </div>
+                  </div>
 
   <button class="btn btn-success">Save</button>
 </form>

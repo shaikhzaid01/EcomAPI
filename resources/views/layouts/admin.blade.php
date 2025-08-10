@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
   <!-- Optional extra (Ionicons) -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.9.1/summernote-bs5.min.css" integrity="sha512-rDHV59PgRefDUbMm2lSjvf0ZhXZy3wgROFyao0JxZPGho3oOuWejq/ELx0FOZJpgaE5QovVtRN65Y3rrb7JhdQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -108,7 +110,7 @@
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-inline">
-      DVC
+      EcomAPI
     </div>
     <strong>&copy; {{ date('Y') }} {{ config('app.name') }}.</strong> All rights reserved.
   </footer>
@@ -119,7 +121,14 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.9.1/summernote-bs5.min.js" integrity="sha512-qTQLA91yGDLA06GBOdbT7nsrQY8tN6pJqjT16iTuk08RWbfYmUz/pQD3Gly1syoINyCFNsJh7A91LtrLIwODnw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script>
+      $('#summernote').summernote({
+        placeholder: 'Description',
+        tabsize: 2,
+        height: 100
+      });
+    </script>
 @stack('scripts')
 </body>
 </html>

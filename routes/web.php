@@ -10,9 +10,12 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
-});
+    return redirect()->route('admin.dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -34,7 +37,9 @@ Route::get('/dashboard',function(){
 Route::resource('products',ProductController::class);
 
 Route::get('cart',[CartController::class,'index'])->name('cart.index');
-Route::resource('orders',OrderController::class)->only(['index','show']);
+// Orders
+Route::resource('orders',OrderController::class)->only(['index','show','update']);
+
 });
 
 
