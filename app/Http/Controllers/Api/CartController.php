@@ -42,17 +42,18 @@ class CartController extends Controller
 {
     $userId = 1; // hardcoded
     try {
-        $cartItems = Cart::with('product')->where('user_id', $userId)->get();
+        $cartItems = Cart::with('product.images')->where('user_id', $userId)->get();
 
         $total = 0;
         foreach ($cartItems as $item) {
-            $total += $item->product->price * $item->quantity;
+            $item->subtotal = $item->product->price * $item->quantity;
+            $total += $item->subtotal;
         }
 
         return response()->json([
             'status' => true,
             'message' => 'Cart items fetched successfully',
-            'data' => $cartItems,
+            'items' => $cartItems,
             'total' => $total,
         ]);
     } catch (\Exception $e) {
