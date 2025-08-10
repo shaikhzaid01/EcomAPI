@@ -21,6 +21,9 @@ Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 
 Route::post('/cart',[CartController::class,'addToCart']);
 Route::get('/cart', [CartController::class, 'listCartItems']);
+Route::put('/cart/{cartItem}', [CartController::class, 'updateCartItem']);
+Route::delete('/cart/{cartItem}', [CartController::class, 'deleteCartItem']);
+
 
 
 });
