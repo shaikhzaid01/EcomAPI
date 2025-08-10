@@ -36,9 +36,10 @@ Route::get('/dashboard',function(){
 
 Route::resource('products',ProductController::class);
 
-Route::get('cart',[CartController::class,'index'])->name('cart.index');
+// Route::get('cart',[CartController::class,'index'])->name('cart.index');
 // Orders
 Route::resource('orders',OrderController::class)->only(['index','show','update']);
+  Route::resource('cart', CartController::class)->only(['index', 'destroy']);
 
 });
 

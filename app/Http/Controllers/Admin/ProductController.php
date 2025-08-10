@@ -42,7 +42,7 @@ class ProductController extends Controller
             'name'=> 'required| string|max:255',
             'price'=> 'required|numeric',
             'description'=> 'nullable|string',
-            'images.*' => 'image| max:5120'
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
         $product = Product::create($data);
         if ($request->hasFile('images')){
@@ -83,7 +83,7 @@ class ProductController extends Controller
             'name'=> 'required| string|max:255',
             'price'=> 'required|numeric',
             'description'=> 'nullable|string',
-            'images.*' => 'image| max:5120',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
                    'delete_images' => 'array',
         'delete_images.*' => 'integer|exists:product_images,id',
         ]);
