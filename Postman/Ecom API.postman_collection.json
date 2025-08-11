@@ -1,0 +1,1198 @@
+{
+	"info": {
+		"_postman_id": "553f919d-2dbc-401e-ae80-f26e3027dfbd",
+		"name": "Ecom API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47478836",
+		"_collection_link": "https://shaikhzaid468-8103844.postman.co/workspace/Shaikh-Zaid's-Workspace~d8dbf6d1-fb54-452b-8fa7-20b76f9928ed/collection/47478836-553f919d-2dbc-401e-ae80-f26e3027dfbd?action=share&source=collection_link&creator=47478836"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/v1/products",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:06:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Products fetched successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Product 1\",\n            \"price\": \"100.00\",\n            \"description\": \"<p>New<b> Product</b></p>\",\n            \"created_at\": \"2025-08-10T17:31:24.000000Z\",\n            \"updated_at\": \"2025-08-10T17:31:24.000000Z\",\n            \"images\": [\n                {\n                    \"id\": 1,\n                    \"product_id\": 1,\n                    \"image_path\": \"products/5cOnRMbJwMynXroSVUpiFEVbJZmdXSEZt16ex761.jpg\",\n                    \"created_at\": \"2025-08-10T17:31:25.000000Z\",\n                    \"updated_at\": \"2025-08-10T17:31:25.000000Z\"\n                },\n                {\n                    \"id\": 2,\n                    \"product_id\": 1,\n                    \"image_path\": \"products/wWphowkBuQkwEzZgMlloTi0ZJIlEAuoTwdLTBW8W.jpg\",\n                    \"created_at\": \"2025-08-10T17:31:25.000000Z\",\n                    \"updated_at\": \"2025-08-10T17:31:25.000000Z\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Product 2\",\n            \"price\": \"500.00\",\n            \"description\": \"<p>New Product 2</p>\",\n            \"created_at\": \"2025-08-10T17:31:52.000000Z\",\n            \"updated_at\": \"2025-08-10T17:31:52.000000Z\",\n            \"images\": [\n                {\n                    \"id\": 3,\n                    \"product_id\": 2,\n                    \"image_path\": \"products/V3z1XSy6r7SYNaysObZaCWoDSJJPe8FaiRyEiF1e.jpg\",\n                    \"created_at\": \"2025-08-10T17:31:52.000000Z\",\n                    \"updated_at\": \"2025-08-10T17:31:52.000000Z\"\n                },\n                {\n                    \"id\": 4,\n                    \"product_id\": 2,\n                    \"image_path\": \"products/5rkIVeOBBAMvNiNdxDlQucVDTZaV69hrVez8l7Dh.jpg\",\n                    \"created_at\": \"2025-08-10T17:31:52.000000Z\",\n                    \"updated_at\": \"2025-08-10T17:31:52.000000Z\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Product 3",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Product 3 Description",
+							"type": "text"
+						},
+						{
+							"key": "images[]",
+							"type": "file",
+							"src": "postman-cloud:///1f0767a0-3597-4f50-96e8-989b7d5f7b56"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/products",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Product 3",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Product 3 Description",
+									"type": "text"
+								},
+								{
+									"key": "images[]",
+									"type": "file",
+									"src": "postman-cloud:///1f0767a0-3597-4f50-96e8-989b7d5f7b56"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:11:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"name\": \"Product 3\",\n        \"price\": \"200\",\n        \"description\": \"Product 3 Description\",\n        \"updated_at\": \"2025-08-11T06:11:36.000000Z\",\n        \"created_at\": \"2025-08-11T06:11:36.000000Z\",\n        \"id\": 3,\n        \"images\": [\n            {\n                \"id\": 5,\n                \"product_id\": 3,\n                \"image_path\": \"products/5zDbxZbLQsINEne89DgyiWeRKpu17D0ExQ7eCuES.jpg\",\n                \"created_at\": \"2025-08-11T06:11:38.000000Z\",\n                \"updated_at\": \"2025-08-11T06:11:38.000000Z\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/v1/products/3",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Product Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/products/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:14:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Product fetched successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Product 3\",\n        \"price\": \"200.00\",\n        \"description\": \"Product 3 Description\",\n        \"created_at\": \"2025-08-11T06:11:36.000000Z\",\n        \"updated_at\": \"2025-08-11T06:11:36.000000Z\",\n        \"images\": [\n            {\n                \"id\": 5,\n                \"product_id\": 3,\n                \"image_path\": \"products/5zDbxZbLQsINEne89DgyiWeRKpu17D0ExQ7eCuES.jpg\",\n                \"created_at\": \"2025-08-11T06:11:38.000000Z\",\n                \"updated_at\": \"2025-08-11T06:11:38.000000Z\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "Product 3 Desxcription update via postman",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/products/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "Product 3 Desxcription update via postman",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/products/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:18:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Product 3\",\n        \"price\": \"200.00\",\n        \"description\": \"Product 3 Desxcription update via postman\",\n        \"created_at\": \"2025-08-11T06:11:36.000000Z\",\n        \"updated_at\": \"2025-08-11T06:18:06.000000Z\",\n        \"images\": [\n            {\n                \"id\": 5,\n                \"product_id\": 3,\n                \"image_path\": \"products/5zDbxZbLQsINEne89DgyiWeRKpu17D0ExQ7eCuES.jpg\",\n                \"created_at\": \"2025-08-11T06:11:38.000000Z\",\n                \"updated_at\": \"2025-08-11T06:11:38.000000Z\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "Product 3 Desxcription update via postman",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/products/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Product",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "Product 3 Desxcription update via postman",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/products/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:19:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Product deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "All Cart Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}cart",
+					"host": [
+						"{{baseURL}}cart"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "All Cart Items",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}cart",
+							"host": [
+								"{{baseURL}}cart"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:21:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Cart items fetched successfully\",\n    \"items\": [],\n    \"total\": 0\n}"
+				},
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}cart",
+							"host": [
+								"{{baseURL}}cart"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:24:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Cart items fetched successfully\",\n    \"items\": [\n        {\n            \"id\": 7,\n            \"user_id\": 1,\n            \"product_id\": 2,\n            \"quantity\": 5,\n            \"created_at\": \"2025-08-11T06:23:07.000000Z\",\n            \"updated_at\": \"2025-08-11T06:23:07.000000Z\",\n            \"subtotal\": 2500,\n            \"product\": {\n                \"id\": 2,\n                \"name\": \"Product 2\",\n                \"price\": \"500.00\",\n                \"description\": \"<p>New Product 2</p>\",\n                \"created_at\": \"2025-08-10T17:31:52.000000Z\",\n                \"updated_at\": \"2025-08-10T17:31:52.000000Z\",\n                \"images\": [\n                    {\n                        \"id\": 3,\n                        \"product_id\": 2,\n                        \"image_path\": \"products/V3z1XSy6r7SYNaysObZaCWoDSJJPe8FaiRyEiF1e.jpg\",\n                        \"created_at\": \"2025-08-10T17:31:52.000000Z\",\n                        \"updated_at\": \"2025-08-10T17:31:52.000000Z\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"product_id\": 2,\n                        \"image_path\": \"products/5rkIVeOBBAMvNiNdxDlQucVDTZaV69hrVez8l7Dh.jpg\",\n                        \"created_at\": \"2025-08-10T17:31:52.000000Z\",\n                        \"updated_at\": \"2025-08-10T17:31:52.000000Z\"\n                    }\n                ]\n            }\n        },\n        {\n            \"id\": 8,\n            \"user_id\": 1,\n            \"product_id\": 1,\n            \"quantity\": 5,\n            \"created_at\": \"2025-08-11T06:23:27.000000Z\",\n            \"updated_at\": \"2025-08-11T06:23:27.000000Z\",\n            \"subtotal\": 500,\n            \"product\": {\n                \"id\": 1,\n                \"name\": \"Product 1\",\n                \"price\": \"100.00\",\n                \"description\": \"<p>New<b> Product</b></p>\",\n                \"created_at\": \"2025-08-10T17:31:24.000000Z\",\n                \"updated_at\": \"2025-08-10T17:31:24.000000Z\",\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"product_id\": 1,\n                        \"image_path\": \"products/5cOnRMbJwMynXroSVUpiFEVbJZmdXSEZt16ex761.jpg\",\n                        \"created_at\": \"2025-08-10T17:31:25.000000Z\",\n                        \"updated_at\": \"2025-08-10T17:31:25.000000Z\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"product_id\": 1,\n                        \"image_path\": \"products/wWphowkBuQkwEzZgMlloTi0ZJIlEAuoTwdLTBW8W.jpg\",\n                        \"created_at\": \"2025-08-10T17:31:25.000000Z\",\n                        \"updated_at\": \"2025-08-10T17:31:25.000000Z\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"total\": 3000\n}"
+				}
+			]
+		},
+		{
+			"name": "Add to Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}cart?product_id=1&quantity=5",
+					"host": [
+						"{{baseURL}}cart"
+					],
+					"query": [
+						{
+							"key": "product_id",
+							"value": "1"
+						},
+						{
+							"key": "quantity",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add to Cart",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}cart?product_id=1&quantity=5",
+							"host": [
+								"{{baseURL}}cart"
+							],
+							"query": [
+								{
+									"key": "product_id",
+									"value": "1"
+								},
+								{
+									"key": "quantity",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:23:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Product added to cart successfully\",\n    \"data\": {\n        \"user_id\": 1,\n        \"product_id\": \"1\",\n        \"quantity\": \"5\",\n        \"updated_at\": \"2025-08-11T06:23:27.000000Z\",\n        \"created_at\": \"2025-08-11T06:23:27.000000Z\",\n        \"id\": 8\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Cart",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}cart/8?quantity=10",
+					"host": [
+						"{{baseURL}}cart"
+					],
+					"path": [
+						"8"
+					],
+					"query": [
+						{
+							"key": "quantity",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}cart/8?quantity=10",
+							"host": [
+								"{{baseURL}}cart"
+							],
+							"path": [
+								"8"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:25:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Cart Item updated succefully\",\n    \"data\": {\n        \"id\": 8,\n        \"user_id\": 1,\n        \"product_id\": 1,\n        \"quantity\": \"10\",\n        \"created_at\": \"2025-08-11T06:23:27.000000Z\",\n        \"updated_at\": \"2025-08-11T06:25:52.000000Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete cart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}cart/7",
+					"host": [
+						"{{baseURL}}cart"
+					],
+					"path": [
+						"7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}cart/7",
+							"host": [
+								"{{baseURL}}cart"
+							],
+							"path": [
+								"7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:26:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Cart item deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}checkout",
+					"host": [
+						"{{baseURL}}checkout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Checkout",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}checkout",
+							"host": [
+								"{{baseURL}}checkout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:28:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"razorpay_order_id\": \"order_R3vcgAjvohYz7x\",\n        \"amount\": 100000,\n        \"currency\": \"INR\",\n        \"key\": \"rzp_test_MDyBoKj8sSuIyt\",\n        \"order\": {\n            \"user_id\": 1,\n            \"razorpay_order_id\": \"order_R3vcgAjvohYz7x\",\n            \"total\": 1000,\n            \"status\": \"pending\",\n            \"updated_at\": \"2025-08-11T06:28:06.000000Z\",\n            \"created_at\": \"2025-08-11T06:28:06.000000Z\",\n            \"id\": 5\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "All Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}orders",
+					"host": [
+						"{{baseURL}}orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "All Orders",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}orders",
+							"host": [
+								"{{baseURL}}orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:29:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"orders\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"user_id\": 1,\n                \"razorpay_order_id\": \"order_R3j9pSXf5dtoDn\",\n                \"total\": \"500.00\",\n                \"status\": \"completed\",\n                \"created_at\": \"2025-08-10T18:16:27.000000Z\",\n                \"updated_at\": \"2025-08-11T05:43:46.000000Z\",\n                \"items\": [\n                    {\n                        \"id\": 1,\n                        \"order_id\": 1,\n                        \"product_id\": 1,\n                        \"quantity\": 5,\n                        \"price\": \"100.00\",\n                        \"created_at\": \"2025-08-10T18:16:27.000000Z\",\n                        \"updated_at\": \"2025-08-10T18:16:27.000000Z\",\n                        \"product\": {\n                            \"id\": 1,\n                            \"name\": \"Product 1\",\n                            \"price\": \"100.00\",\n                            \"description\": \"<p>New<b> Product</b></p>\",\n                            \"created_at\": \"2025-08-10T17:31:24.000000Z\",\n                            \"updated_at\": \"2025-08-10T17:31:24.000000Z\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"user_id\": 1,\n                \"razorpay_order_id\": \"order_R3jGWkUsNb5EDx\",\n                \"total\": \"1500.00\",\n                \"status\": \"pending\",\n                \"created_at\": \"2025-08-10T18:22:48.000000Z\",\n                \"updated_at\": \"2025-08-10T18:22:48.000000Z\",\n                \"items\": [\n                    {\n                        \"id\": 2,\n                        \"order_id\": 2,\n                        \"product_id\": 1,\n                        \"quantity\": 5,\n                        \"price\": \"100.00\",\n                        \"created_at\": \"2025-08-10T18:22:48.000000Z\",\n                        \"updated_at\": \"2025-08-10T18:22:48.000000Z\",\n                        \"product\": {\n                            \"id\": 1,\n                            \"name\": \"Product 1\",\n                            \"price\": \"100.00\",\n                            \"description\": \"<p>New<b> Product</b></p>\",\n                            \"created_at\": \"2025-08-10T17:31:24.000000Z\",\n                            \"updated_at\": \"2025-08-10T17:31:24.000000Z\"\n                        }\n                    },\n                    {\n                        \"id\": 3,\n                        \"order_id\": 2,\n                        \"product_id\": 2,\n                        \"quantity\": 2,\n                        \"price\": \"500.00\",\n                        \"created_at\": \"2025-08-10T18:22:48.000000Z\",\n                        \"updated_at\": \"2025-08-10T18:22:48.000000Z\",\n                        \"product\": {\n                            \"id\": 2,\n                            \"name\": \"Product 2\",\n                            \"price\": \"500.00\",\n                            \"description\": \"<p>New Product 2</p>\",\n                            \"created_at\": \"2025-08-10T17:31:52.000000Z\",\n                            \"updated_at\": \"2025-08-10T17:31:52.000000Z\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"id\": 3,\n                \"user_id\": 1,\n                \"razorpay_order_id\": \"order_R3jIg6w4sOlmU7\",\n                \"total\": \"2000.00\",\n                \"status\": \"pending\",\n                \"created_at\": \"2025-08-10T18:24:50.000000Z\",\n                \"updated_at\": \"2025-08-10T18:24:50.000000Z\",\n                \"items\": [\n                    {\n                        \"id\": 4,\n                        \"order_id\": 3,\n                        \"product_id\": 2,\n                        \"quantity\": 2,\n                        \"price\": \"500.00\",\n                        \"created_at\": \"2025-08-10T18:24:50.000000Z\",\n                        \"updated_at\": \"2025-08-10T18:24:50.000000Z\",\n                        \"product\": {\n                            \"id\": 2,\n                            \"name\": \"Product 2\",\n                            \"price\": \"500.00\",\n                            \"description\": \"<p>New Product 2</p>\",\n                            \"created_at\": \"2025-08-10T17:31:52.000000Z\",\n                            \"updated_at\": \"2025-08-10T17:31:52.000000Z\"\n                        }\n                    },\n                    {\n                        \"id\": 5,\n                        \"order_id\": 3,\n                        \"product_id\": 1,\n                        \"quantity\": 10,\n                        \"price\": \"100.00\",\n                        \"created_at\": \"2025-08-10T18:24:50.000000Z\",\n                        \"updated_at\": \"2025-08-10T18:24:50.000000Z\",\n                        \"product\": {\n                            \"id\": 1,\n                            \"name\": \"Product 1\",\n                            \"price\": \"100.00\",\n                            \"description\": \"<p>New<b> Product</b></p>\",\n                            \"created_at\": \"2025-08-10T17:31:24.000000Z\",\n                            \"updated_at\": \"2025-08-10T17:31:24.000000Z\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"id\": 4,\n                \"user_id\": 1,\n                \"razorpay_order_id\": \"order_R3jM9efTzcV6bz\",\n                \"total\": \"1000.00\",\n                \"status\": \"pending\",\n                \"created_at\": \"2025-08-10T18:28:07.000000Z\",\n                \"updated_at\": \"2025-08-10T18:28:07.000000Z\",\n                \"items\": [\n                    {\n                        \"id\": 6,\n                        \"order_id\": 4,\n                        \"product_id\": 1,\n                        \"quantity\": 10,\n                        \"price\": \"100.00\",\n                        \"created_at\": \"2025-08-10T18:28:07.000000Z\",\n                        \"updated_at\": \"2025-08-10T18:28:07.000000Z\",\n                        \"product\": {\n                            \"id\": 1,\n                            \"name\": \"Product 1\",\n                            \"price\": \"100.00\",\n                            \"description\": \"<p>New<b> Product</b></p>\",\n                            \"created_at\": \"2025-08-10T17:31:24.000000Z\",\n                            \"updated_at\": \"2025-08-10T17:31:24.000000Z\"\n                        }\n                    }\n                ]\n            },\n            {\n                \"id\": 5,\n                \"user_id\": 1,\n                \"razorpay_order_id\": \"order_R3vcgAjvohYz7x\",\n                \"total\": \"1000.00\",\n                \"status\": \"pending\",\n                \"created_at\": \"2025-08-11T06:28:06.000000Z\",\n                \"updated_at\": \"2025-08-11T06:28:06.000000Z\",\n                \"items\": [\n                    {\n                        \"id\": 7,\n                        \"order_id\": 5,\n                        \"product_id\": 1,\n                        \"quantity\": 10,\n                        \"price\": \"100.00\",\n                        \"created_at\": \"2025-08-11T06:28:06.000000Z\",\n                        \"updated_at\": \"2025-08-11T06:28:06.000000Z\",\n                        \"product\": {\n                            \"id\": 1,\n                            \"name\": \"Product 1\",\n                            \"price\": \"100.00\",\n                            \"description\": \"<p>New<b> Product</b></p>\",\n                            \"created_at\": \"2025-08-10T17:31:24.000000Z\",\n                            \"updated_at\": \"2025-08-10T17:31:24.000000Z\"\n                        }\n                    }\n                ]\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/v1/orders?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/v1/orders?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/v1/orders?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/v1/orders\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 5,\n        \"total\": 5\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Single Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}orders/1",
+					"host": [
+						"{{baseURL}}orders"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Single Order",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}orders/1",
+							"host": [
+								"{{baseURL}}orders"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:29:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"order\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"razorpay_order_id\": \"order_R3j9pSXf5dtoDn\",\n        \"total\": \"500.00\",\n        \"status\": \"completed\",\n        \"created_at\": \"2025-08-10T18:16:27.000000Z\",\n        \"updated_at\": \"2025-08-11T05:43:46.000000Z\",\n        \"items\": [\n            {\n                \"id\": 1,\n                \"order_id\": 1,\n                \"product_id\": 1,\n                \"quantity\": 5,\n                \"price\": \"100.00\",\n                \"created_at\": \"2025-08-10T18:16:27.000000Z\",\n                \"updated_at\": \"2025-08-10T18:16:27.000000Z\",\n                \"product\": {\n                    \"id\": 1,\n                    \"name\": \"Product 1\",\n                    \"price\": \"100.00\",\n                    \"description\": \"<p>New<b> Product</b></p>\",\n                    \"created_at\": \"2025-08-10T17:31:24.000000Z\",\n                    \"updated_at\": \"2025-08-10T17:31:24.000000Z\"\n                }\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Order Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "completed",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}orders/1/status?status=completed",
+					"host": [
+						"{{baseURL}}orders"
+					],
+					"path": [
+						"1",
+						"status"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "completed"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Order Status",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "completed",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}orders/1/status?status=completed",
+							"host": [
+								"{{baseURL}}orders"
+							],
+							"path": [
+								"1",
+								"status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "completed"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Aug 2025 06:31:25 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Order status update succefully\",\n    \"orders\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"razorpay_order_id\": \"order_R3j9pSXf5dtoDn\",\n        \"total\": \"500.00\",\n        \"status\": \"completed\",\n        \"created_at\": \"2025-08-10T18:16:27.000000Z\",\n        \"updated_at\": \"2025-08-11T05:43:46.000000Z\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		},
+		{
+			"key": "baseURL",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		}
+	]
+}
