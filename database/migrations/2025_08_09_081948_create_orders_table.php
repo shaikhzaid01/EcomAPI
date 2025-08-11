@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
-             $table->id();
+       Schema::create('orders', function (Blueprint $table) {
+    $table->id();
     $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
+    $table->string('razorpay_order_id')->nullable()->unique();
     $table->decimal('total', 10, 2)->default(0);
     $table->enum('status', ['pending', 'processing', 'completed', 'cancelled'])->default('pending');
     $table->timestamps();
-        });
+});
+
     }
 
     /**

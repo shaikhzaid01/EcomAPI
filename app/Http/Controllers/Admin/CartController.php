@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cart;
 use Illuminate\Http\Request;
 
+
 class CartController extends Controller
 {
     public function __construct(){
@@ -68,4 +69,8 @@ class CartController extends Controller
         $cart->delete();
         return back()->with('success','Cart item removed');
     }
+
+
+
+
 }
